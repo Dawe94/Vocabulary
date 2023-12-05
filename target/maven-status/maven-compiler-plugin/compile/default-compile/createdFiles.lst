@@ -1,0 +1,8 @@
+com\vocabulary\Main.class
+com\vocabulary\PrimaryController.class
+com\vocabulary\LazyLoad.class
+module-info.class
+com\vocabulary\App.class
+com\vocabulary\Reader.class
+com\vocabulary\DiffrentNumbers.class
+com\vocabulary\Word.class

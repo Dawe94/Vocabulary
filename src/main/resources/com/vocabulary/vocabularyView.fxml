@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vocabulary.PrimaryController">
+    <children>
+      <Pane id="showAnswer" fx:id="showAnswer" layoutX="32.0" layoutY="46.0" prefHeight="185.0" prefWidth="342.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebebeb" height="185.0" stroke="BLACK" strokeType="INSIDE" width="342.0" />
+            <Button layoutX="143.0" layoutY="141.0" mnemonicParsing="false" onAction="#handleUnderstandAction" prefHeight="30.0" prefWidth="57.0" text="Okay!" />
+            <Label id="answer" fx:id="answer" alignment="CENTER" minHeight="16" minWidth="69" prefHeight="110.0" prefWidth="342.0" textAlignment="CENTER" />
+            <Label id="checkAnswer" fx:id="checkAnswer" alignment="CENTER" layoutX="92.0" layoutY="110.0" minHeight="16" minWidth="69" prefHeight="30.0" prefWidth="159.0" text="Not a Correct Answer" textAlignment="CENTER" textFill="#e40000" underline="true" />
+         </children>
+      </Pane>
+      <Pane id="base" fx:id="base" layoutX="8.0" layoutY="14.0" prefHeight="278.0" prefWidth="387.0" visible="false">
+         <children>
+              <Button id="checkButton" fx:id="checkButton" layoutX="141.0" layoutY="220.0" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="103.0" text="Check!" />
+            <HBox layoutY="44.0" prefHeight="48.0" prefWidth="385.0" spacing="70.0">
+               <children>
+                    <Label id="englishWord" fx:id="englishWord" alignment="CENTER" minHeight="16" minWidth="69" prefHeight="48.0" prefWidth="179.0" text="Umbrella" textAlignment="CENTER" />
+                  <TextField id="hungarianEquivalent" fx:id="hungarianEquivalent" prefHeight="48.0" prefWidth="176.0" />
+               </children>
+            </HBox>
+            <Label alignment="CENTER" layoutX="92.0" prefHeight="39.0" prefWidth="201.0" text="Vocabulary Game" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="14.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleBackToMenu" prefHeight="30.0" prefWidth="72.0" text="Back" />
+            <Label id="correctAnswer" fx:id="correctAnswer" alignment="CENTER" layoutX="141.0" layoutY="191.0" prefHeight="20.0" prefWidth="103.0" text="Correct Answer" textFill="#03a41b" visible="false" />
+            <Label layoutX="228.0" layoutY="92.0" prefHeight="30.0" prefWidth="156.0" text="Hungarian Meaning" />
+            <Label layoutX="34.0" layoutY="97.0" prefHeight="20.0" prefWidth="103.0" text="English Word" />
+         </children>
+      </Pane>
+      <Pane id="errorPane" fx:id="errorPane" layoutX="99.0" layoutY="130.0" prefHeight="126.0" prefWidth="207.0" snapToPixel="false" visible="false">
+         <children>
+            <Rectangle arcHeight="10.0" arcWidth="10.0" fill="WHITE" height="126.0" stroke="BLACK" strokeType="INSIDE" width="207.0" />
+            <Button layoutX="52.0" layoutY="73.0" mnemonicParsing="false" onAction="#okButtonAction" prefHeight="39.0" prefWidth="103.0" text="OK!" />
+            <Label id="exception" fx:id="exception" alignment="CENTER" blendMode="SRC_ATOP" layoutX="30.0" layoutY="14.0" prefHeight="61.0" prefWidth="147.0" textAlignment="CENTER" textFill="#a10d0d" wrapText="true" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Pane id="menu" fx:id="menu" prefHeight="300.0" prefWidth="400.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f8f8" height="300.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+            <Label alignment="CENTER" layoutX="100.0" layoutY="14.0" prefHeight="39.0" prefWidth="201.0" text="Vocabulary Game" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <VBox layoutX="145.0" layoutY="81.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleStartGame" prefHeight="30.0" prefWidth="111.0" text="Start Game" />
+                  <Button mnemonicParsing="false" onAction="#handleStatus" prefHeight="30.0" prefWidth="111.0" text="Status" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane id="status" fx:id="status" prefHeight="300.0" prefWidth="400.0" visible="false">
+         <children>
+            <Button layoutX="14.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleBackToMenu" prefHeight="30.0" prefWidth="72.0" text="Back" />
+            <HBox layoutX="50.0" layoutY="55.0" prefHeight="30.0" prefWidth="294.0">
+               <children>
+                  <Label prefHeight="41.0" prefWidth="147.0" text="Number Of Hits: " />
+                  <Label id="numOfHits" fx:id="numOfHits" prefHeight="39.0" prefWidth="147.0" text="Label" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>
